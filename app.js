@@ -8,6 +8,13 @@ const app = express();
 // get twitts
 require('./fetcher');
 
+// CORS enabled
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  next();
+});
+
 // Middlewares
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: true}));

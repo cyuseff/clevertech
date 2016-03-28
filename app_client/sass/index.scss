@@ -1,0 +1,23 @@
+body {
+  background-color: #FFF;
+}
+
+#twitter-demo {
+  margin: 10px;
+}
+
+.twitts-header {
+  margin: 0!important;
+
+  .twitts-header-img {
+    width: 60px;
+  }
+
+  .twitts-header-h3 {
+    margin: 10px 0 0 0;
+
+    a, a:hover {
+      color: #777;
+    }
+  }
+}
