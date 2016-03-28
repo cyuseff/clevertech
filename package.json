@@ -1,0 +1,22 @@
+{
+  "name": "clevertech",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyuseff/clevertech.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cyuseff/clevertech/issues"
+  },
+  "homepage": "https://github.com/cyuseff/clevertech#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
