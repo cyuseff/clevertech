@@ -51,17 +51,17 @@ export default function Twitt({twitt}) {
 
           <ul className="list-inline twitt-actions">
             <li>
-              <a href="https://twitter.com/intent/tweet?in_reply_to=463440424141459456">
+              <a href={`https://twitter.com/intent/tweet?in_reply_to=${twitt.twittId}`}>
                 <i className="fa fa-reply"></i> Reply
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/intent/retweet?tweet_id=463440424141459456">
+              <a href={`https://twitter.com/intent/retweet?tweet_id=${twitt.twittId}`}>
                 <i className="fa fa-retweet"></i> {`${twitt.retweetCount} Retweet`}
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/intent/like?tweet_id=463440424141459456">
+              <a href={`https://twitter.com/intent/like?tweet_id=${twitt.twittId}`}>
                 <i className="fa fa-heart"></i> {`${twitt.favoriteCount} Like`}
               </a>
             </li>
