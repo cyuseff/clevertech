@@ -21,7 +21,12 @@ export default class TwittListContainer extends React.Component {
   getTwitts() {
     this.setState({loading: true});
 
-    Fetch.get('http://0.0.0.0:5000/api/v1/twitts')
+    let opts;
+    if(this.state.twitts.length) {
+      opts = {last: this.state.twitts[0].createdAt};
+    }
+
+    Fetch.get('http://0.0.0.0:5000/api/v1/twitts', opts)
       .then((data) => {
         let state = {loading: false}
         let twitts = data.twitts;
@@ -32,7 +37,7 @@ export default class TwittListContainer extends React.Component {
         }
 
         this.setState(state);
-        //window.setTimeout(() => this.getTwitts(), this.TIME);
+        window.setTimeout(() => this.getTwitts(), this.TIME);
       })
       .catch(err => console.log(err))
   }

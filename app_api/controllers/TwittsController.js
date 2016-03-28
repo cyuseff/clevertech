@@ -9,6 +9,11 @@ module.exports.list = function(req, res) {
     sort: { createdAt: -1 },
     limit: 5
   };
+
+  if(req.query.last) {
+    query = {createdAt: {$gt: new Date(req.query.last)}}
+  }
+
   Twitt.find(query, proyection, opts, (err, twitts) => {
     if(err) return res.status(400).json({err});
     return res.status(200).json({twitts});

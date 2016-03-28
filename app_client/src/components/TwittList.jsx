@@ -13,8 +13,11 @@ export default function TwittList({twitts, loading}) {
     );
   });
 
+  load = <div className={`twitts-loader ${loading? 'active' : ''}`}><i className="fa fa-refresh fa-spin"></i></div>
+
   return (
     <div>
+      {load}
       <div className="media twitts-header">
         <div className="media-left">
           <img className="twitts-header-img" src="https://pbs.twimg.com/profile_images/586560973407850496/GBwrXz-__bigger.png" alt="Clevertech" />
