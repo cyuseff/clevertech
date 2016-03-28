@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 // get twitts
-//require('./fetcher');
+require('./fetcher');
 
 // Middlewares
 app.use(express.static(__dirname + '/public'));

@@ -21,7 +21,7 @@ function mapTwitt(twitt) {
     entities: twitt.entities,
 
     createdAt: new Date(twitt.created_at),
-    updatedAt: Date.now
+    updatedAt: Date.now()
   };
 
   let user;
@@ -34,7 +34,7 @@ function mapTwitt(twitt) {
   }
 
   tw.name = user.name;
-  tw.screenName = user.screenName;
+  tw.screenName = user.screen_name;
   tw.avatar = user.profile_image_url_https;
 
   return tw;
@@ -49,4 +49,25 @@ twitter.get('statuses/user_timeline', opts, function(error, tweets, response) {
   Twitt.collection.insert(tweets, {ordered: false}, (err, tweets) => {
     console.log(tweets.insertedCount);
   });
+});
+
+// listen for new twitts
+twitter.stream('user', {}, (stream) => {
+  let twitt;
+  stream.on('data', (data) => {
+    console.log('New data recived -> ', data);
+
+    // save new twitts
+    if(data.id && data.user && data.user.id === USER_ID) {
+      twitt = new Twitt(mapTwitt(data));
+
+      twitt.save((err, res) => {
+        if(err) return console.log('twitter.stream err:', err);
+        return console.log('New Twitt inserted: ', res)
+      });
+    }
+
+  });
+
+  stream.on('error', err => console.log('Stream error: ', err));
 });

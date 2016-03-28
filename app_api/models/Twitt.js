@@ -18,7 +18,7 @@ const twittSchema = new mongoose.Schema({
 
   entities: Object,
 
-  createdAt: Date,
+  createdAt: { type: Date },
   updatedAt: { type: Date, default: Date.now }
 });
 
