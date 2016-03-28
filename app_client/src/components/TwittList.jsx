@@ -17,7 +17,7 @@ export default function TwittList({twitts, loading}) {
     <div>
       <div className="media twitts-header">
         <div className="media-left">
-          <img src="https://pbs.twimg.com/profile_images/586560973407850496/GBwrXz-__bigger.png" alt="Clevertech" />
+          <img className="twitts-header-img" src="https://pbs.twimg.com/profile_images/586560973407850496/GBwrXz-__bigger.png" alt="Clevertech" />
         </div>
         <div className="media-body">
           <h3 className="twitts-header-h3"><a>Clevertech</a> Twitts Feed</h3>

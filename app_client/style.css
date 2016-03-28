@@ -7,8 +7,24 @@ body {
 .twitts-header {
   margin: 0 !important; }
   .twitts-header .twitts-header-img {
-    width: 60px; }
+    width: 60px;
+    border-radius: 3px; }
   .twitts-header .twitts-header-h3 {
     margin: 10px 0 0 0; }
     .twitts-header .twitts-header-h3 a, .twitts-header .twitts-header-h3 a:hover {
       color: #777; }
+
+.twitts-list {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  border: solid 1px #EEE; }
+  .twitts-list > li {
+    padding: 15px 20px;
+    border-bottom: solid 1px #EEE; }
+    .twitts-list > li:last-child {
+      border: 0; }
+    .twitts-list > li .twitt-avatar {
+      border-radius: 3px; }
+    .twitts-list > li .twitt-actions > li {
+      margin-right: 15px; }
