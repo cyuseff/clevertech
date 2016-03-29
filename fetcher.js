@@ -3,7 +3,7 @@
 const twitter = require('./config/twitter');
 const Twitt = require('./app_api/models/Twitt');
 
-const USER_ID = 213807752;
+const USER_ID = 53180074;
 const opts = {
   user_id: USER_ID,
   count: 10
