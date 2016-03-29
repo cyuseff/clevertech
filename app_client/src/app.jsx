@@ -6,6 +6,7 @@ import TwittListContainer from './components/TwittListContainer';
 
 const WIDTH = 500;
 const HEIGHT = 600;
+const URI = 'https://infinite-earth-55046.herokuapp.com';
 
 let iframe = document.createElement('iframe');
 iframe.width = WIDTH;
@@ -20,15 +21,15 @@ container.appendChild(iframe);
 // CSS
 let bootstrap = document.createElement('link');
 bootstrap.rel = 'stylesheet';
-bootstrap.href = 'http://0.0.0.0:5000/css/bootstrap.min.css';
+bootstrap.href = URI + '/css/bootstrap.min.css';
 
 let fontAwesome = document.createElement('link');
 fontAwesome.rel = 'stylesheet';
-fontAwesome.href = 'http://0.0.0.0:5000/css/font-awesome.css';
+fontAwesome.href = URI + '/css/font-awesome.css';
 
 let style = document.createElement('link');
 style.rel = 'stylesheet';
-style.href = 'http://0.0.0.0:5000/css/style.css';
+style.href = URI + '/css/style.css';
 
 let head = iframe.contentDocument.getElementsByTagName('head')[0];
 head.appendChild(bootstrap);
