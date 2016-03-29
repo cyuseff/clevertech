@@ -1,9 +1,5 @@
 body {
-  background-color: #FFF;
-}
-
-#twitter-demo {
-  margin: 10px;
+  height: 100%;
 }
 
 .twitts-header {
@@ -23,23 +19,30 @@ body {
   }
 }
 
-.twitts-list {
-  margin: 10px 0 0;
-  padding: 0;
-  list-style: none;
-
+.twitts-list-container {
+  position: absolute;
+  top: 70px;
+  bottom: 0;
+  overflow: hidden;
+  overflow-y: auto;
   border: solid 1px #EEE;
 
-  > li {
-    padding: 15px 20px;
-    border-bottom: solid 1px #EEE;
+  .twitts-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
-    &:last-child { border: 0; }
+    > li {
+      padding: 15px 20px;
+      border-bottom: solid 1px #EEE;
 
-    .twitt-avatar { border-radius: 3px; }
+      &:last-child { border: 0; }
 
-    .twitt-actions {
-      > li { margin-right: 15px; }
+      .twitt-avatar { border-radius: 3px; }
+
+      .twitt-actions {
+        > li { margin-right: 15px; }
+      }
     }
   }
 }

@@ -12,7 +12,7 @@ var assign = require('lodash.assign');
 var server = require('gulp-server-livereload');
 var babelify = require('babelify');
 var uglify = require('gulp-uglify');
-//var iife = require("gulp-iife");
+var iife = require("gulp-iife");
 
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
@@ -45,7 +45,7 @@ function bundle() {
     // optional, remove if you dont want sourcemaps
     .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
        // Add transformation tasks to the pipeline here.
-       //.pipe(iife())
+       .pipe(iife())
        .pipe(uglify())
     .pipe(sourcemaps.write('./')) // writes .map file
     .pipe(gulp.dest('./app_client/'));
@@ -74,7 +74,7 @@ gulp.task('sass', function () {
   return gulp.src('./app_client/sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('style.css'))
-    .pipe(gulp.dest('./app_client/'));
+    .pipe(gulp.dest('./public/css/'));
 });
 
 gulp.task('watch', function () {

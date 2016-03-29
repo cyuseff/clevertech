@@ -28,9 +28,11 @@ export default function TwittList({twitts, loading}) {
         </div>
       </div>
 
-      <ul className="twitts-list">
-        {list}
-      </ul>
+      <div className="twitts-list-container">
+        <ul className="twitts-list">
+          {list}
+        </ul>
+      </div>
 
     </div>
   );
