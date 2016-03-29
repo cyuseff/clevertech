@@ -26,7 +26,7 @@ export default class TwittListContainer extends React.Component {
       opts = {last: this.state.twitts[0].createdAt};
     }
 
-    Fetch.get('http://0.0.0.0:5000/api/v1/twitts', opts)
+    Fetch.get('https://infinite-earth-55046.herokuapp.com/api/v1/twitts', opts)
       .then((data) => {
         let state = {loading: false}
         let twitts = data.twitts;
