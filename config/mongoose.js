@@ -1,7 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const dbURI = 'mongodb://localhost/clevertech';
+const dbURI = proccess.env.MONGO_URI || 'mongodb://localhost/clevertech';
 
 // Events
 mongoose.connection
